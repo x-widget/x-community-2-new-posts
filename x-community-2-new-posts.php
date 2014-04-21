@@ -10,26 +10,27 @@ if( $file_headers[0] == 'HTTP/1.1 404 Not Found') {
 }
 
 if( $widget_config['title'] ) $title = $widget_config['title'];
-else $title = "새로 등록된 글";
+else $title = "조회수가 많은 글";
 
 if( $widget_config['no'] ) $limit = $widget_config['no'];
-else $limit = 15;
+else $limit = 10;
 
 $posts = g::posts(
 	array(
-		'domain'=>etc::domain(),				
+		'domain'=>etc::domain(),
 		'limit'=> $limit
 	)
 );
 ?>
 
+<link rel='stylesheet' type='text/css' href='<?=x::url_theme()?>/css/new.posts.css' />
 <div class='new-posts'>
 	 <div class='title'>
 		<img class='new-post-icon' src='<?=$icon_url?>' />
-		<?=$title?>
+		새로 등록된 글
 	 </div>
 	 <?php
-	 $dot_url = x::url()."/widget/".$widget_config['name']."/img/dot.gif";
+	 $dot_url = x::url_theme().'/img/dot.gif';
 	 
 	 if ( $posts ) {
 		foreach ( $posts as $p ) {
