@@ -30,7 +30,7 @@ $posts = g::posts(
 		<?=$title?>
 	 </div>
 	 <?php
-	 $dot_url = x::url_theme().'/img/dot.gif';
+	 $dot_url = $widget_config['url'].'/img/dot.gif';
 	 
 	 if ( $posts ) {
 		foreach ( $posts as $p ) {
