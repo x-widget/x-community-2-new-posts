@@ -27,7 +27,7 @@ $posts = g::posts(
 <div class='new-posts'>
 	 <div class='title'>
 		<img class='new-post-icon' src='<?=$icon_url?>' />
-		새로 등록된 글
+		<?=$title?>
 	 </div>
 	 <?php
 	 $dot_url = x::url_theme().'/img/dot.gif';
